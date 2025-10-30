@@ -1,0 +1,28 @@
+ .card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h2, .card-header {
+  margin-bottom: 5px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+button, a.btn {
+  font-weight: 500;
+} 
+.card input, .card textarea, .card select {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+
+

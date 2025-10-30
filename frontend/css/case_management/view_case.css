@@ -1,0 +1,33 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+}
+
+h2 {
+  letter-spacing: 0.5px;
+}
+
+.card {
+  border-radius: 20px;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.btn {
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.modal-content {
+  border-radius: 20px;
+}
