@@ -13,3 +13,6 @@ A simple Customer Relationship Management (CRM) system built using PHP and MySQL
 - PHP
 - MySQL
 - HTML, CSS, Bootstrap, JavaScript
+## login
+- username - admin@gmail.com
+- password - admin123
