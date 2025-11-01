@@ -80,7 +80,7 @@
     // Fetch all assigned Cases
     async function loadCases() {
       try {
-        const res = await fetch("http://localhost/CRM_Project/backend/case_management/api/view_case.php");
+        const res = await fetch("clientpilot.infinityfreeapp.com/backend/case_management/api/view_case.php");
         const cases = await res.json();
         const caseSelect = document.getElementById("case_id");
         cases.forEach(c => {
@@ -99,7 +99,7 @@
 
     async function loadEmployees() {
       try {
-        const res = await fetch("http://localhost/CRM_Project/backend/case_assignment/api/view_employees.php");
+        const res = await fetch("clientpilot.infinityfreeapp.com/backend/case_assignment/api/view_employees.php");
         const employees = await res.json();
         const empSelect = document.getElementById("employee_id");
         employeeData = employees; 
@@ -132,7 +132,7 @@
       const msgDiv = document.getElementById("message");
 
       try {
-        const res = await fetch("http://localhost/CRM_Project/backend/case_assignment/api/add_assignment.php", {
+        const res = await fetch("clientpilot.infinityfreeapp.com/backend/case_assignment/api/add_assignment.php", {
           method: "POST",
           body: formData
         });

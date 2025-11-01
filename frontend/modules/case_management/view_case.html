@@ -106,7 +106,7 @@
     // Load cases
     async function loadCases() {
       try {
-        const response = await fetch('../../../backend/case_management/api/view_case.php');
+        const response = await fetch('clientpilot.infinityfreeapp.com/backend/case_management/api/view_case.php');
         const data = await response.json();
 
         const tbody = document.querySelector("#caseTable tbody");
@@ -159,7 +159,7 @@
       const formData = new FormData(e.target);
 
       try {
-        const response = await fetch("http://localhost/CRM_Project/backend/case_management/api/update_case.php", {
+        const response = await fetch("clientpilot.infinityfreeapp.com/backend/case_management/api/update_case.php", {
           method: "POST",
           body: formData
         });
@@ -193,7 +193,7 @@
         const formData = new FormData();
         formData.append("id", id);
 
-        const response = await fetch("../../../backend/case_management/api/delete_case.php", {
+        const response = await fetch("clientpilot.infinityfreeapp.com/backend/case_management/api/delete_case.php", {
           method: "POST",
           body: formData
         });

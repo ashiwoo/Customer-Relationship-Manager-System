@@ -94,7 +94,7 @@
   <!--  Sidebar -->
   <div class="sidebar">
     <a href="#" onclick="loadPage('modules/reports/reports.html')">🏠 Dashboard</a>
-    <a href="#" onclick="loadPage('modules/case_management/view_case.html')">🤵 Clients</a>
+    <a href="#" onclick="loadPage('modules/case_management/view_case.html')">🤵 Client Details</a>
     <a href="#" onclick="loadPage('modules/case_assignment/add_case_assignment.html')">📝 Case Assignment</a>
     <a href="#" onclick="loadPage('modules/case_assignment/view_case_assignments.html')">📂 View Assignments</a>
     <a href="#" onclick="loadPage('modules/reports/reports.html')">📊 Reports</a>
@@ -107,7 +107,16 @@
 
 <!-- js section -->
   <script>
-    const LOGIN_PAGE = "/CRM_Project/frontend/auth/login.html"; 
+    const LOGIN_PAGE = "clientpilot.infinityfreeapp.com/frontend/auth/login.html"; 
+     document.addEventListener("DOMContentLoaded", () => {
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+      if (!isLoggedIn || isLoggedIn !== "true") {
+        console.log("User not logged in. Redirecting...");
+        window.location.href = LOGIN_PAGE;
+      } else {
+        console.log("User logged in. Access granted.");
+      }
 
   //  logout logic
     document.addEventListener("DOMContentLoaded", () => {
@@ -119,18 +128,20 @@
       if (confirm("Are you sure you want to logout?")) {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("userRole");
-        window.location.href = "/CRM_Project/frontend/auth/login.html";
+        window.location.href = "clientpilot.infinityfreeapp.com/frontend/auth/login.html";
       }
     });
   }
   const userName = localStorage.getItem("userName") || "Admin";
   document.getElementById("userName").textContent = userName;
 });
+});
 
     
     function loadPage(page) {
       document.getElementById("contentFrame").src = page;
     }
+  
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -93,7 +93,7 @@
     // Load Assignments function
     async function loadAssignments() {
       try {
-        const response = await fetch("../../../backend/case_assignment/api/view_assignments.php");
+        const response = await fetch("clientpilot.infinityfreeapp.com/backend/case_assignment/api/view_assignments.php");
         const data = await response.json();
         const tbody = document.querySelector("#caseTable tbody");
         tbody.innerHTML = "";
@@ -140,7 +140,7 @@
     const formData = new FormData();
     formData.append("id", id);
 
-    const res = await fetch("http://localhost/CRM_Project/backend/case_assignment/api/delete_assignment.php", {
+    const res = await fetch("clientpilot.infinityfreeapp.com/backend/case_assignment/api/delete_assignment.php", {
       method: "POST",
       body: formData
     });
@@ -164,7 +164,7 @@
 
     // Load employees for edit dropdown
     async function loadEditEmployees() {
-      const res = await fetch("../../../backend/case_assignment/api/view_employees.php");
+      const res = await fetch("clientpilot.infinityfreeapp.com/backend/case_assignment/api/view_employees.php");
       const data = await res.json();
       const select = document.getElementById("edit_employee_id");
       select.innerHTML = '<option value="">-- Select Employee --</option>';
@@ -196,7 +196,7 @@
       formData.append("assigned_date", document.getElementById("edit_assigned_date").value);
       formData.append("status", document.getElementById("edit_status").value);
 
-      const res = await fetch("../../../backend/case_assignment/api/update_assignment.php", {
+      const res = await fetch("clientpilot.infinityfreeapp.com/backend/case_assignment/api/update_assignment.php", {
         method: "POST",
         body: formData,
       });

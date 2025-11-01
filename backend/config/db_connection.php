@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "if0_40306717";
+$password = "if0_40306717";
 $dbname = "crm_system_db"; 
 $port = 3307;
 

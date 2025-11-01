@@ -76,7 +76,7 @@
 
   <script>
     async function loadReports() {
-      const res = await fetch("http://localhost/CRM_Project/backend/reports/api/reports.php");
+      const res = await fetch("clientpilot.infinityfreeapp.com/backend/reports/api/reports.php");
       const data = await res.json();
 
       if (data.success) {
