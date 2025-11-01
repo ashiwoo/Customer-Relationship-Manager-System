@@ -93,7 +93,7 @@
   e.preventDefault();
   const formData = new FormData(this);
 
-  const response = await fetch('clientpilot.infinityfreeapp.com/backend/case_management/api/add_case.php', {
+  const response = await fetch('http://localhost/CRM_Project/backend/case_management/api/add_case.php', {
     method: 'POST',
     body: formData
   });

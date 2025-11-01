@@ -12,7 +12,7 @@
       <table class="table table-bordered table-striped">
         <thead class="table-primary">
           <tr>
-            <th>#</th>
+            <th>Sr</th>
             <th>Customer Name</th>
             <th>Issue</th>
             <th>Status</th>
@@ -32,7 +32,7 @@
     const employeeId = params.get("employee_id");
 
     async function loadEmployeeCases() {
-      const res = await fetch(`clientpilot.infinityfreeapp.com/backend/reports/api/view_employee_cases.php?employee_id=${employeeId}`);
+      const res = await fetch(`http://localhost/CRM_Project/backend/reports/api/view_employee_cases.php?employee_id=${employeeId}`);
       const data = await res.json();
       const tbody = document.getElementById("caseTableBody");
 

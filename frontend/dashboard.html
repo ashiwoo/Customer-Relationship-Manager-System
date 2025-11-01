@@ -105,45 +105,42 @@
     <iframe id="contentFrame" src="modules/reports/reports.html"></iframe>
   </div>
 
-<!-- js section -->
+<!-- js part -->
   <script>
-    const LOGIN_PAGE = "clientpilot.infinityfreeapp.com/frontend/auth/login.html"; 
-     document.addEventListener("DOMContentLoaded", () => {
-      const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const LOGIN_PAGE = "http://localhost/CRM_Project/frontend/auth/login.html";
 
-      if (!isLoggedIn || isLoggedIn !== "true") {
-        console.log("User not logged in. Redirecting...");
-        window.location.href = LOGIN_PAGE;
-      } else {
-        console.log("User logged in. Access granted.");
-      }
-
-  //  logout logic
-    document.addEventListener("DOMContentLoaded", () => {
-  const logoutBtn = document.getElementById("logoutBtn");
-
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (confirm("Are you sure you want to logout?")) {
-        localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("userRole");
-        window.location.href = "clientpilot.infinityfreeapp.com/frontend/auth/login.html";
-      }
-    });
-  }
-  const userName = localStorage.getItem("userName") || "Admin";
-  document.getElementById("userName").textContent = userName;
-});
-});
-
-    
-    function loadPage(page) {
-      document.getElementById("contentFrame").src = page;
-    }
+  document.addEventListener("DOMContentLoaded", () => {
   
-  </script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn || isLoggedIn !== "true") {
+      console.log("User not logged in. Redirecting...");
+      window.location.href = LOGIN_PAGE;
+      return; 
+    }
+    console.log("User logged in. Access granted.");
 
+    const userName = localStorage.getItem("userName") || "Admin";
+    document.getElementById("userName").textContent = userName;
+
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (confirm("Are you sure you want to logout?")) {
+          localStorage.removeItem("isLoggedIn");
+          localStorage.removeItem("userRole");
+          localStorage.removeItem("userName");
+          window.location.href = LOGIN_PAGE;
+        }
+      });
+    }
+  });
+
+  function loadPage(page) {
+    document.getElementById("contentFrame").src = page;
+  }
+  </script>
+ <!-- bootsrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

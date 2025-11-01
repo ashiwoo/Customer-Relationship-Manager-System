@@ -5,22 +5,16 @@ include "../../config/db_connection.php";
 $response = [];
 
 try {
-    // Get all cases
     $totalCases = $conn->query("SELECT COUNT(*) AS total FROM cases")->fetch_assoc()['total'];
 
-    // All Assigned cases
     $assignedCases = $conn->query("SELECT COUNT(*) AS total FROM case_assignments")->fetch_assoc()['total'];
 
-    //All Pending cases
     $pendingCases = $conn->query("SELECT COUNT(*) AS total FROM case_assignments WHERE status='Pending'")->fetch_assoc()['total'];
 
-    // All Completed cases
     $completedCases = $conn->query("SELECT COUNT(*) AS total FROM case_assignments WHERE status='Completed'")->fetch_assoc()['total'];
 
-    // Total employees
     $totalEmployees = $conn->query("SELECT COUNT(*) AS total FROM employees")->fetch_assoc()['total'];
 
-    // Case count for each employee
     $employeeStats = [];
     $result = $conn->query("SELECT e.id, e.name, COUNT(ca.id) AS total_assigned 
                         FROM employees e 
