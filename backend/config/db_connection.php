@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
+$servername = "sql100.infinityfree.com";
 $username = "if0_40306717";
-$password = "if0_40306717";
-$dbname = "crm_system_db"; 
+$password = "Rm2G960pZFLf";
+$dbname = "if0_40306717_crm_system_db"; 
 $port = 3307;
 
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
