@@ -16,3 +16,6 @@ A simple Customer Relationship Management (CRM) system built using PHP and MySQL
 ## login
 - username - admin@gmail.com
 - password - admin123
+
+## Database
+- you can get sql file inside backwnd/config
